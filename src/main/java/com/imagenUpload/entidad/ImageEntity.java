@@ -26,9 +26,9 @@ public class ImageEntity {
     @Schema(description = "Nombre de la imagen", example = "producto1.png")
     private String name;
 
-    @Lob // Almacena datos binarios en la base de datos
-    @Schema(description = "Contenido de la imagen en formato binario")
-    private byte[] data;
+    @Column(nullable = false, length = 500)
+    @Schema(description = "Ruta del archivo de la imagen", example = "/uploads/producto1.png")
+    private String path;  // Ruta del archivo en el sistema de archivos
 
     @Column(nullable = false, length = 70)
     @Schema(description = "Tipo de contenido de la imagen", example = "image/png")
